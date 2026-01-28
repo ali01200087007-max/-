@@ -3,312 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helmy Card - سحب الراتب</title>
+    <title>نظام تسجيل الدخول</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
-        
         :root {
-            --primary-red: linear-gradient(135deg, #8b0000 0%, #ff0000 45%, #4a0000 100%);
-            --bg: #050505;
-            --card-bg: #0a0a0a;
-            --accent-red: #ff3131;
-            --text-gray: #94a3b8;
+            --primary-color: #4a90e2;
+            --bg-color: #f4f7f6;
+            --card-color: #ffffff;
         }
 
         body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at top right, #2a0000, #050505);
-            color: #f8fafc; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        .form-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 49, 49, 0.2);
-            border-radius: 25px;
-            padding: 35px; width: 100%; max-width: 480px; 
-            box-shadow: 0 0 50px rgba(255, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
+        /* واجهة تسجيل الدخول */
+        .login-container {
+            background: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
         }
 
-        .form-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--primary-red);
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
 
-        .header { text-align: center; margin-bottom: 25px; }
-        .header h1 { 
-            font-size: 34px; font-weight: 900; margin: 0;
-            background: var(--primary-red); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .warning-text { color: #ff3131; font-weight: bold; font-size: 14px; margin-top: 8px; display: block; }
-        .intro-text { font-size: 13px; color: var(--text-gray); line-height: 1.6; margin-top: 10px; }
-        
-        .copy-box { 
-            background: rgba(255, 49, 49, 0.05); padding: 15px; border-radius: 15px; 
-            border: 1px dashed rgba(255, 49, 49, 0.4); margin-top: 15px; font-size: 14px; cursor: pointer; transition: 0.3s;
-        }
-        .copy-box:hover { background: rgba(255, 49, 49, 0.12); }
-        .copy-box b { color: #fff; font-size: 20px; letter-spacing: 1px; }
-
-        .input-group { margin-bottom: 18px; text-align: right; }
-        label { display: block; margin-bottom: 8px; font-size: 13px; color: #efefef; font-weight: 600; }
-        .hint-text { color: #ff3131; font-size: 11px; margin-top: 5px; display: block; font-weight: bold; }
-
-        input, select {
-            width: 100%; background: #111; border: 1px solid #222;
-            border-radius: 12px; padding: 14px; color: white; font-size: 15px; box-sizing: border-box; outline: none;
-            transition: 0.3s; font-family: 'Tajawal', sans-serif;
-        }
-        input:focus { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(255, 49, 49, 0.2); }
-        
-        .file-label {
-            display: block; background: #111; border: 2px dashed rgba(255, 49, 49, 0.3);
-            border-radius: 12px; padding: 15px; text-align: center; cursor: pointer; transition: 0.3s; color: #fff; font-weight: bold;
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
-        .calc-box { 
-            background: #000; padding: 15px; border-radius: 15px; 
-            text-align: center; margin: 15px 0; border: 1px solid rgba(255, 49, 49, 0.2); 
-        }
-        .calc-value { font-size: 24px; font-weight: 800; color: var(--accent-red); }
+        button:hover { background-color: #357abd; }
 
-        button#submitBtn {
-            width: 100%; padding: 16px; background: var(--primary-red);
-            border: none; border-radius: 12px; color: #fff; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.3s;
+        /* واجهة الخيارات الستة */
+        .dashboard {
+            display: none; /* مخفية في البداية */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            width: 90%;
         }
 
-        #invoiceOverlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+        .card {
+            background: var(--card-color);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.3s;
         }
-        .invoice-box { 
-            background: #0a0a0a; color: #fff; width: 100%; max-width: 400px; padding: 30px; 
-            border-radius: 25px; text-align: center; border: 2px solid #ff3131; 
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
-        }
-        .inv-header { font-size: 26px; font-weight: 900; color: #ff3131; margin-bottom: 20px; }
-        .inv-item { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 0; font-size: 14px; }
-        .inv-label { color: var(--text-gray); }
-        .inv-value { color: #fff; font-weight: bold; }
 
-        #copyToast {
-            visibility: hidden; min-width: 120px; background-color: #ff3131; color: #fff; text-align: center;
-            border-radius: 8px; padding: 10px; position: fixed; z-index: 1001; bottom: 30px; left: 50%;
-            transform: translateX(-50%); font-size: 12px; font-weight: bold;
+        .card:hover { transform: translateY(-5px); background: #f0f7ff; }
+
+        .card i { font-size: 40px; color: var(--primary-color); display: block; margin-bottom: 10px; }
+
+        @media (max-width: 600px) {
+            .dashboard { grid-template-columns: repeat(2, 1fr); }
         }
-        #copyToast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 1.5s; }
     </style>
 </head>
 <body>
 
-<div class="form-card">
-    <div class="header">
-        <h1>Helmy Card 🔗</h1>
-        <span class="warning-text">يستغرق تأكيد التارجت وإرسال الأموال 24 ساعة</span>
-        <div class="intro-text">بعد عملية السحب أنت توافق على شروط الخدمة شكراً لثقتكم _ Helmy Card 🔗</div>
-        <div class="copy-box" onclick="copyId()">
-            ID سحب جانكو: <b id="adminId">99983</b><br>
-            الاسم: <b>Helmy fire</b><br>
-            <small>اضغط هنا لنسخ الايدي وارسل الراتب 👆</small>
-        </div>
+    <div id="loginPage" class="login-container">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="username" placeholder="اسم المستخدم (admin)">
+        <input type="password" id="password" placeholder="كلمة المرور (123)">
+        <button onclick="login()">دخول</button>
+        <p id="error" style="color: red; font-size: 14px; margin-top: 10px;"></p>
     </div>
 
-    <div class="input-group">
-        <label>🆔 الي سحبت منو id</label>
-        <input type="text" id="user_id" placeholder="أدخل ID الخاص بك" required>
+    <div id="dashboardPage" class="dashboard">
+        <div class="card"><h3>الملف الشخصي</h3></div>
+        <div class="card"><h3>الرسائل</h3></div>
+        <div class="card"><h3>الإحصائيات</h3></div>
+        <div class="card"><h3>الإعدادات</h3></div>
+        <div class="card"><h3>المساعدة</h3></div>
+        <div class="card" onclick="location.reload()" style="border: 1px solid #ffcccc;"><h3>خروج</h3></div>
     </div>
 
-    <div class="input-group">
-        <label>👤 اسم الوكيل (اختياري)</label>
-        <input type="text" id="agent_name" placeholder="أدخل اسم الوكيل إن وجد">
-    </div>
+    <script>
+        function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
 
-    <div class="input-group">
-        <label>طريقة الدفع</label>
-        <select id="method" onchange="calculate()">
-            <option value="فودافون كاش">فودافون كاش</option>
-            <option value="اتصالات كاش">اتصالات كاش</option>
-            <option value="أورنج كاش">أورنج كاش</option>
-            <option value="كود الوكيل في المنصة">كود الوكيل في المنصة (سعر خاص)</option>
-        </select>
-    </div>
-
-    <div class="input-group">
-        <label>الدولار</label>
-        <input type="number" id="dollars" placeholder="أدخل عدد الدولارات" oninput="calculate()" required>
-    </div>
-
-    <div class="calc-box">
-        <div class="calc-value" id="res-egp">الإجمالي: 0.00 ج.م</div>
-    </div>
-
-    <div class="input-group">
-        <label>رقم الاستلام</label>
-        <input type="text" id="wallet" placeholder="الرقم الذي سيصلك عليه المبلغ" required>
-        <span class="hint-text">اذا كان الرقم غير 010 يتم خصم عمولة التحويل تلقائياً.</span>
-    </div>
-
-    <div class="input-group">
-        <label>إرفاق صورة التحويل (إجباري)</label>
-        <label for="screenshot" class="file-label" id="fileLabel">
-            <span id="labelText">📸 اضغط لاختيار صورة التحويل</span>
-            <input type="file" id="screenshot" accept="image/*" style="display:none" onchange="updateLabel()" required>
-        </label>
-    </div>
-
-    <button onclick="submitForm()" id="submitBtn">إرسال الطلب الآن 🚀</button>
-</div>
-
-<div id="copyToast">تم نسخ الأيدي بنجاح ✅</div>
-
-<div id="invoiceOverlay">
-    <div class="invoice-box">
-        <div class="inv-header">فاتورة سحب راتب ✅</div>
-        <div class="inv-item"><span class="inv-label">ID الحساب:</span> <span class="inv-value" id="inv-uid"></span></div>
-        <div class="inv-item"><span class="inv-label">اسم الوكيل:</span> <span class="inv-value" id="inv-agent"></span></div>
-        <div class="inv-item"><span class="inv-label">المبلغ بالدولار:</span> <span class="inv-value" id="inv-usd"></span></div>
-        <div class="inv-item"><span class="inv-label">المبلغ بالمصري:</span> <span class="inv-value" id="inv-egp"></span></div>
-        <div class="inv-item"><span class="inv-label">طريقة الاستلام:</span> <span class="inv-value" id="inv-method"></span></div>
-        <div class="inv-item"><span class="inv-label">اليوم:</span> <span class="inv-value" id="inv-day"></span></div>
-        <div class="inv-item"><span class="inv-label">التاريخ:</span> <span class="inv-value" id="inv-time" style="font-size: 11px;"></span></div>
-        <button onclick="location.reload()" style="background:var(--primary-red); color:#fff; border:none; width:100%; padding:15px; border-radius:12px; cursor:pointer; font-weight: bold; margin-top: 20px;">إغلاق وحفظ</button>
-    </div>
-</div>
-
-<script>
-    const SHEET_URL = 'https://sheetdb.io/api/v1/9jwc8e6r6rfxp';
-
-    function updateLabel() {
-        const file = document.getElementById('screenshot').files[0];
-        if(file) document.getElementById('labelText').innerText = "✅ تم اختيار: " + file.name;
-    }
-
-    function copyId() {
-        const idText = document.getElementById('adminId').innerText;
-        navigator.clipboard.writeText(idText).then(() => {
-            const toast = document.getElementById("copyToast");
-            toast.className = "show";
-            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2000);
-        });
-    }
-
-    function calculate() {
-        const usd = document.getElementById('dollars').value;
-        const method = document.getElementById('method').value;
-        const rate = (method === "كود الوكيل في المنصة") ? 46 : 45;
-        const egp = (usd * rate).toFixed(2);
-        document.getElementById('res-egp').innerText = usd > 0 ? "الإجمالي: " + egp + " ج.م" : "الإجمالي: 0.00 ج.م";
-    }
-
-    async function submitForm() {
-        const btn = document.getElementById('submitBtn');
-        const userId = document.getElementById('user_id').value;
-        const agentName = document.getElementById('agent_name').value || "لا يوجد";
-        const usdValue = document.getElementById('dollars').value;
-        const method = document.getElementById('method').value;
-        const wallet = document.getElementById('wallet').value;
-        const photoFile = document.getElementById('screenshot').files[0];
-
-        if(!userId || !usdValue || !wallet || !photoFile) { 
-            alert("يرجى إكمال جميع البيانات وإرفاق صورة التحويل!"); 
-            return; 
-        }
-
-        btn.disabled = true;
-        btn.innerText = "جاري التحقق من الطلبات السابقة...";
-
-        try {
-            // فحص منع التكرار خلال 4 أيام
-            const checkRes = await fetch(SHEET_URL);
-            const dataSheet = await checkRes.json();
-            const fourDaysAgo = new Date();
-            fourDaysAgo.setDate(fourDaysAgo.getDate() - 4);
-
-            const isDuplicate = dataSheet.some(row => {
-                if(!row["التاريخ"]) return false;
-                const datePart = row["التاريخ"].split(',')[0].split('/');
-                const rowDate = new Date(datePart[2], datePart[1]-1, datePart[0]);
-                return row["الأيدي"] === userId && rowDate >= fourDaysAgo;
-            });
-
-            if (isDuplicate) {
-                alert("عذراً، هذا الأيدي قام بعملية سحب خلال الـ 4 أيام الماضية.");
-                btn.disabled = false; btn.innerText = "إرسال الطلب الآن 🚀";
-                return;
+            // للتجربة: اليوزر admin والباسورد 123
+            if (user === "admin" && pass === "123") {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('dashboardPage').style.display = 'grid';
+                document.body.style.alignItems = 'center'; 
+            } else {
+                document.getElementById('error').innerText = "بيانات الدخول غير صحيحة!";
             }
-
-            const now = new Date();
-            const days = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
-            const currentDay = days[now.getDay()];
-            const dateStr = now.toLocaleDateString('en-GB') + ", " + now.toLocaleTimeString('ar-EG');
-            const finalRate = (method === "كود الوكيل في المنصة") ? 46 : 45;
-            const egpVal = (usdValue * finalRate).toFixed(2);
-
-            // رسالة التليجرام بتنسيق فخم
-            const token = "8493256102:AAFuFPixyivycVPImhz7dMAtpcP0-NsZMpk";
-            const chat_id = "7054064246";
-            const msg = `
-🔴 *طلب سحب جديد - Helmy Card* 🔴
-
-🆔 *الأيـدي:* \`${userId}\`
-
-👤 *الوكـيل:* ${agentName}
-
-💵 *المبلغ بالدولار:* ${usdValue} $
-
-🇪🇬 *المبلغ بالمصري:* ${egpVal} ج.م
-
-💳 *طريقة الدفع:* ${method}
-
-🏦 *بيانات المحفظة:* \`${wallet}\`
-
-📅 *الـيـوم:* ${currentDay}
-
-⏰ *التاريخ والوقت:* ${dateStr}
-
-----------------------------
-🔗 *بوابة سحب جانكو*`;
-
-            const formData = new FormData();
-            formData.append('chat_id', chat_id);
-            formData.append('photo', photoFile);
-            formData.append('caption', msg);
-            formData.append('parse_mode', 'Markdown');
-            
-            // إرسال لتيليجرام
-            await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, { method: 'POST', body: formData });
-
-            // إرسال لـ SheetDB
-            await fetch(SHEET_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ data: [{
-                    "الأيدي": userId,
-                    "الدولار": usdValue + " $",
-                    "المصري": egpVal + " ج.م",
-                    "طريقة السحب": method,
-                    "بيانات المحفظة": "'" + wallet,
-                    "التاريخ": dateStr,
-                    "اليوم": currentDay,
-                    "اسم الوكيل": agentName
-                }]})
-            });
-
-            document.getElementById('inv-uid').innerText = userId;
-            document.getElementById('inv-agent').innerText = agentName;
-            document.getElementById('inv-usd').innerText = usdValue + " $";
-            document.getElementById('inv-egp').innerText = egpVal + " ج.م";
-            document.getElementById('inv-method').innerText = method;
-            document.getElementById('inv-day').innerText = currentDay;
-            document.getElementById('inv-time').innerText = dateStr;
-            document.getElementById('invoiceOverlay').style.display = 'flex';
-
-        } catch (e) { 
-            alert("حدث خطأ تقني!"); 
-            btn.disabled = false; btn.innerText = "إرسال الطلب الآن 🚀";
         }
-    }
-</script>
+    </script>
 </body>
 </html>
-
