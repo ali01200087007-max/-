@@ -2,381 +2,26 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>YoSo FARM | المركز الرسمي</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة علي</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
-        
-        body { margin: 0; padding: 0; background: #fdfcfb; font-family: 'Cairo', sans-serif; color: #333; overflow-x: hidden; }
-        .container { width: 100%; max-width: 500px; margin: auto; background: white; min-height: 100vh; padding: 12px; box-sizing: border-box; border-left: 2px solid #d4af37; border-right: 2px solid #d4af37; }
-        
-        .header { text-align: center; margin-bottom: 20px; }
-        .big-yoso { font-size: 55px; font-weight: 900; margin: 0; background: linear-gradient(180deg, #d4af37 0%, #8a6d3b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-        .brand-sub { font-size: 18px; font-weight: 900; color: #333; }
-        .gold-line { color: #b8860b; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
-
-        /* تأثير الـ 3D والوميض الملتف حول الأزرار */
-        .btn-main { 
-            display: block; width: 100%; padding: 15px; margin-bottom: 15px; 
-            background: #fff; border: 1.5px solid #eee; border-radius: 12px; 
-            text-align: center; text-decoration: none; color: #333; 
-            font-weight: 900; font-size: 16px; 
-            box-sizing: border-box; cursor: pointer;
-            position: relative;
-            box-shadow: 0 4px 0px rgba(0,0,0,0.1), 0 6px 10px rgba(0,0,0,0.05);
-            transition: all 0.2s ease;
-            overflow: hidden;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
         }
-
-        .btn-main::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(transparent, rgba(212, 175, 55, 0.2), transparent 30%);
-            animation: rotateGlow 4s linear infinite;
-            z-index: 0;
-            pointer-events: none;
+        h1 {
+            font-size: 4rem;
+            color: #ff4757;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-
-        @keyframes rotateGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .btn-main span, .btn-main div { position: relative; z-index: 1; }
-
-        .btn-main:active { 
-            transform: translateY(3px);
-            box-shadow: 0 1px 0px rgba(0,0,0,0.1);
-        }
-        
-        .click-here { display: block; font-size: 9px; font-weight: 400; opacity: 0.8; margin-top: 2px; }
-
-        /* أزرار الواتساب الفرعية */
-        .whatsapp-options { display: none; margin-bottom: 15px; gap: 10px; flex-direction: column; }
-        .whatsapp-options.active { display: flex; }
-
-        /* زر حفظ الصفحة كصورة */
-        .save-img-btn {
-            background: #b8860b; color: white; border: none; padding: 15px;
-            border-radius: 12px; font-size: 14px; cursor: pointer;
-            margin-top: 10px; width: 100%; font-weight: bold;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            box-shadow: 0 4px 0px #8a6d3b;
-        }
-        .save-img-btn:active { transform: translateY(2px); box-shadow: 0 2px 0px #8a6d3b; }
-
-        .view { display: none; }
-        .view.active { display: block; }
-
-        .tabs { display: flex; gap: 4px; margin-bottom: 15px; }
-        .tab-btn { flex: 1; padding: 10px 5px; font-size: 10.5px; font-weight: bold; border: 1.5px solid #d4af37; background: white; color: #b8860b; border-radius: 8px; cursor: pointer; white-space: nowrap; }
-        .tab-btn.active { background: #d4af37; color: white; }
-
-        .table-wrapper { width: 100%; margin: 10px 0; border: 1px solid #eee; border-radius: 8px; overflow: hidden; background: #fff; }
-        table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        th { background: #fdfaf0; color: #b8860b; font-size: 8.5px; padding: 6px 1px; border: 1px solid #f0e6cc; font-weight: 900; }
-        td { border: 1px solid #f9f9f9; padding: 6px 1px; text-align: center; font-size: 9px; font-weight: 700; color: #444; word-wrap: break-word; }
-
-        .policy-box { background: #fffcf5; border-right: 4px solid #d4af37; padding: 12px; margin: 10px 0; font-size: 11.5px; line-height: 1.7; text-align: right; }
-        .section-h { color: #b8860b; font-weight: 900; font-size: 15px; margin: 15px 0 8px; border-right: 5px solid #d4af37; padding-right: 10px; }
-        .back-home { width: 100%; padding: 15px; background: #222; color: white; border: none; border-radius: 12px; font-weight: bold; margin-top: 15px; cursor: pointer; }
-        
-        .no-export { display: none !important; }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div id="homeView" class="view active">
-            <div class="header">
-                <h1 class="big-yoso">YoSo</h1>
-                <div class="brand-sub">YoSo-Group Voice Chat</div>
-                <div class="gold-line">سحب ذاتي اسبوعي</div>
-            </div>
-            <div class="menu">
-                <div class="btn-main" onclick="show('policyView')"><span>وثيقة سياسة التطبيق الرسمية</span><span class="click-here">اضغط هنا</span></div>
-                <div class="btn-main" onclick="show('shipView')"><span>بيان أسعار الشحن المعتمدة</span><span class="click-here">اضغط هنا</span></div>
-                <div class="btn-main" onclick="show('daemView')"><span>مكافآت ومزايا الداعمين</span><span class="click-here">اضغط هنا</span></div>
-                <div class="btn-main" onclick="show('withdrawView')" style="border-color:#d4af37; color:#8a6d3b"><span>طرق سحب الراتب</span><span class="click-here">اضغط هنا</span></div>
-                
-                <div class="btn-main" style="border-color:#25d366; color:#25d366" onclick="toggleWhatsapp()">
-                    <span>تواصل واتساب مع الإدارة</span><span class="click-here">اضغط هنا للإختيار</span>
-                </div>
-                
-                <div id="whatsappBox" class="whatsapp-options">
-                    <a href="https://wa.me/201558806871" class="btn-main" style="border-color:#25d366; color:#128c7e; margin-bottom: 5px;">
-                        <span>مستر آدم (الإدارة)</span>
-                    </a>
-                    <a href="https://wa.me/966558600585" class="btn-main" style="border-color:#25d366; color:#128c7e; margin-bottom: 5px;">
-                        <span>مستر محارب (الإدارة)</span>
-                    </a>
-                </div>
-
-                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #d4af37; background: #fffcf5; color: #b8860b;"><span>الروابط الرسمية (تحميل - تليجرام - تيك توك)</span><span class="click-here">اضغط هنا</span></div>
-            </div>
-        </div>
-
-        <div id="policyView" class="view">
-            <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'p2','policyView')">المضيفين</button>
-                <button class="tab-btn" onclick="tab(this,'p1','policyView')">سياسة (BD)</button>
-                <button class="tab-btn" onclick="tab(this,'p3','policyView')">الوكالات</button>
-            </div>
-            
-            <div id="p2" class="t-content">
-                <div class="section-h">سياسة برنامج YoSo (راتب أسبوعي من خلال وكيل الشحن)</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>المستوى</th><th>التارجيت</th><th>المضيف</th><th>الوكيل</th><th>الإجمالي</th><th>المكافآت</th></tr></thead>
-                        <tbody>
-                            <tr><td>1</td><td>100,000</td><td>6</td><td>2</td><td>8</td><td>-</td></tr>
-                            <tr><td>2</td><td>150,000</td><td>8</td><td>4</td><td>12</td><td>VIP1/7D</td></tr>
-                            <tr><td>3</td><td>250,000</td><td>14</td><td>6</td><td>20</td><td>VIP1/14D</td></tr>
-                            <tr><td>4</td><td>500,000</td><td>28</td><td>12</td><td>40</td><td>VIP1/30D</td></tr>
-                            <tr><td>5</td><td>750,000</td><td>41</td><td>17</td><td>58</td><td>VIP2/7D</td></tr>
-                            <tr><td>6</td><td>1,000,000</td><td>55</td><td>22</td><td>77</td><td>VIP2/14D</td></tr>
-                            <tr><td>7</td><td>1,250,000</td><td>69</td><td>28</td><td>97</td><td>VIP2/30D</td></tr>
-                            <tr><td>8</td><td>1,500,000</td><td>83</td><td>33</td><td>116</td><td>VIP3/7D</td></tr>
-                            <tr><td>9</td><td>1,750,000</td><td>97</td><td>39</td><td>136</td><td>VIP3/14D</td></tr>
-                            <tr><td>10</td><td>2,000,000</td><td>111</td><td>45</td><td>156</td><td>VIP3/30D</td></tr>
-                            <tr><td>11</td><td>2,500,000</td><td>138</td><td>56</td><td>194</td><td>VIP4/7D</td></tr>
-                            <tr><td>12</td><td>3,000,000</td><td>166</td><td>67</td><td>233</td><td>VIP4/14D</td></tr>
-                            <tr><td>13</td><td>5,000,000</td><td>278</td><td>112</td><td>390</td><td>VIP4 3D</td></tr>
-                            <tr><td>14</td><td>7,500,000</td><td>416</td><td>167</td><td>583</td><td>VIP5/7D</td></tr>
-                            <tr><td>15</td><td>10,000,000</td><td>555</td><td>223</td><td>778</td><td>VIP5/14D</td></tr>
-                            <tr><td>16</td><td>12,000,000</td><td>666</td><td>267</td><td>933</td><td>VIP5/30D</td></tr>
-                            <tr><td>17</td><td>15,000,000</td><td>833</td><td>334</td><td>1167</td><td>VIP5/45D</td></tr>
-                            <tr><td>18</td><td>20,000,000</td><td>1100</td><td>450</td><td>1550</td><td>VIP5/60D</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="section-h">القواعد:</div>
-                <div class="policy-box">
-                    • يتم تفعيل الوكالة بعد انضمام 10 مضيفين.<br>
-                    • الهدايا العادية تصل 100%.<br>
-                    • هدايا الحظ 10%، وكأس الروم 5%.<br>
-                    • نسبة مردود الهدايا 10% لا تؤثر على راتب المضيف.
-                </div>
-                <div class="section-h">عملية التسوية:</div>
-                <div class="policy-box">
-                    • قيمة الصرف: $1 = 9000<br>
-                    • يتم إرسال الرواتب إلى محفظة المضيف أسبوعياً، ويمكن للمضيف سحب الراتب من خلال وكيل شحن.<br>
-                    • يستطيع الوكيل تقديم طلب سحب من يوم 5 إلى يوم 10 من كل شهر.<br>
-                    • تقوم الإدارة بتحويل الرواتب قبل تاريخ 10 من الشهر التالي.
-                </div>
-            </div>
-
-            <div id="p1" class="t-content" style="display:none">
-                <div class="section-h">مستويات الأداء والرواتب الأساسية (BD)</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>Lv</th><th>الأساسي</th><th>الوكالات</th><th>0-6 شهر</th><th>6-12 شهر</th></tr></thead>
-                        <tbody>
-                            <tr><td>Level 1</td><td>$0</td><td>100</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 2</td><td>$30</td><td>500</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 3</td><td>$50</td><td>1000</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 4</td><td>$100</td><td>1500</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 5</td><td>$200</td><td>5000</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 6</td><td>$350</td><td>10000</td><td>3%</td><td>2%</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="policy-box">
-                    1- عدم دعوة 3 وكالات شهرياً يحرمك من الأساسي.<br>
-                    2- الوكالة الفعالة: 10 مضيفين فعالين (Lv1).<br>
-                    3- صلاحية العمولة سنتان ميلاديتان.<br>
-                    4- البقاء في Lv1 لـ 3 أشهر متتالية يجمد المنصب.<br>
-                    5- ترقية لـ Admin فور بلوغ Lv6.<br>
-                    6- وكالتك الخاصة لا تُحسب ضمن التارجت.
-                </div>
-            </div>
-
-            <div id="p3" class="t-content" style="display:none">
-                <div class="section-h">سياسة وكالة الشحن المعتمدة</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>المكافأة</th><th>الكوينزات</th><th>الصرف</th><th>الشحن</th></tr></thead>
-                        <tbody>
-                            <tr><td>-</td><td>2,760,000</td><td>9200</td><td>300$</td></tr>
-                            <tr><td>VIP3*3</td><td>4,625,000</td><td>9250</td><td>500$</td></tr>
-                            <tr><td>VIP3*4</td><td>9,300,000</td><td>9300</td><td>1000$</td></tr>
-                            <tr><td>VIP3,4</td><td>28,500,000</td><td>9500</td><td>3000$</td></tr>
-                            <tr><td>VIP4*4</td><td>48,000,000</td><td>9600</td><td>5000$</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="section-h">شروط وكالة الشحن:</div>
-                <div class="policy-box">
-                    1- شحن 500$ للمحلي أو 1000$ للدولي لتفعيل الوكالة الرسمية.<br>
-                    2- تجميد الوكالة وسحب الكوينات فوراً عند ثبوت تلاعب بالأسعار أو نزاع مع مستخدم.<br>
-                    3- الشحن يتم فقط عبر القنوات الرسمية والروابط المعتمدة من الإدارة.<br>
-                    4- الوكيل مسؤول مسؤولية كاملة عن تأمين حسابه وعمليات التحويل.
-                </div>
-            </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ كافة البيانات كصورة للعميل</button>
-        </div>
-
-        <div id="shipView" class="view">
-            <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'s1','shipView')">جوجل</button>
-                <button class="tab-btn" onclick="tab(this,'s2','shipView')">مصر (EGP)</button>
-                <button class="tab-btn" onclick="tab(this,'s3','shipView')">دولار (USD)</button>
-            </div>
-            
-            <div id="s2" class="t-content" style="display:none">
-                <div class="section-h">وكالة شحن مصر</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>المبلغ (EGP)</th><th>رصيد الكوينات</th></tr></thead>
-                        <tbody>
-                            <tr><td>50 جنية</td><td>8,500</td></tr>
-                            <tr><td>100 جنية</td><td>18,000</td></tr>
-                            <tr><td>200 جنية</td><td>36,000</td></tr>
-                            <tr><td>500 جنية</td><td>90,000</td></tr>
-                            <tr><td>1,000 جنية</td><td>180,000</td></tr>
-                            <tr><td>2,000 جنية</td><td>450,000</td></tr>
-                            <tr><td>5,000 جنية</td><td>900,000</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="policy-box">
-                    <strong style="color:red">سعر صرف الدولار في الرواتب: 46 جنيه.</strong><br>
-                    2- الأسعار تطبق عند استلام الراتب فقط.<br>
-                    3- مخصص لداخل مصر فقط.<br>
-                    4- الإضافة بعد مراجعة القسم المالي.
-                </div>
-            </div>
-
-            <div id="s1" class="t-content">
-                <div class="section-h">شحن جوجل</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>الكوينات</th><th>السعر ($)</th></tr></thead>
-                        <tbody>
-                            <tr><td>8,000</td><td>0.99</td></tr>
-                            <tr><td>40,000</td><td>4.99</td></tr>
-                            <tr><td>80,000</td><td>9.99</td></tr>
-                            <tr><td>240,000</td><td>29.99</td></tr>
-                            <tr><td>400,000</td><td>49.99</td></tr>
-                            <tr><td>800,000</td><td>99.99</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div id="s3" class="t-content" style="display:none">
-                <div class="section-h">الشحن بالدولار</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>المبلغ ($)</th><th>الكوينات</th></tr></thead>
-                        <tbody>
-                            <tr><td>1 دولار</td><td>8,500</td></tr>
-                            <tr><td>5 دولار</td><td>42,500</td></tr>
-                            <tr><td>10 دولار</td><td>85,000</td></tr>
-                            <tr><td>30 دولار</td><td>255,000</td></tr>
-                            <tr><td>50 دولار</td><td>425,000</td></tr>
-                            <tr><td>100 دولار</td><td>850,000</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('shipView')">📸 حفظ أسعار الشحن كصورة</button>
-        </div>
-
-        <div id="daemView" class="view">
-            <div class="section-h">مزايا الداعمين (8 مستويات كاملة)</div>
-            <div class="table-wrapper">
-                <table>
-                    <thead><tr><th>#</th><th>شحن</th><th>ID</th><th>VIP</th><th>شارة</th><th>دخول</th><th>إطار</th><th>مشهور</th><th>هدية</th></tr></thead>
-                    <tbody>
-                        <tr><td>1</td><td>250$</td><td>مميز</td><td>V1</td><td>2.5M</td><td>-</td><td>-</td><td>-</td><td>7.5k</td></tr>
-                        <tr><td>2</td><td>500$</td><td>مميز</td><td>V2</td><td>5M</td><td>-</td><td>-</td><td>-</td><td>15k</td></tr>
-                        <tr><td>3</td><td>1k$</td><td>مميز</td><td>V3</td><td>10M</td><td>-</td><td>-</td><td>✓</td><td>20k</td></tr>
-                        <tr><td>4</td><td>2k$</td><td>مميز</td><td>V4</td><td>20M</td><td>-</td><td>-</td><td>✓</td><td>40k</td></tr>
-                        <tr><td>5</td><td>3k$</td><td>مميز</td><td>V5</td><td>30M</td><td>-</td><td>✓</td><td>✓</td><td>50k</td></tr>
-                        <tr><td>6</td><td>5k$</td><td>مميز</td><td>V5</td><td>50M</td><td>✓</td><td>✓</td><td>✓</td><td>80k</td></tr>
-                        <tr><td>7</td><td>8k$</td><td>مميز</td><td>V5</td><td>80M</td><td>✓</td><td>✓</td><td>✓</td><td>120k</td></tr>
-                        <tr><td>8</td><td>10k$</td><td>AAA</td><td>V5</td><td>100M</td><td>✓</td><td>✓</td><td>✓</td><td>150k</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="policy-box" style="text-align:center">Vip4 مجاني فور التحميل من خدمة العملاء</div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('daemView')">📸 حفظ مزايا الداعمين كصورة</button>
-        </div>
-
-        <div id="withdrawView" class="view">
-            <div class="section-h">نظام سحب الرواتب الرسمي</div>
-            <div class="policy-box">
-                • متاح سحب الراتب للمضيف أو الوكيل من خلال <strong>وكيل الشحن</strong>.<br>
-                • طرق الاستلام المتاحة: <strong>فودافون كاش / شام كاش</strong>.<br>
-                • يمكنك التواصل مع وكيل الشحن لمعرفة أفضل طريقة لاستلام الراتب تناسبك.
-            </div>
-            
-            <div class="section-h">ملاحظة:</div>
-            <div class="policy-box">
-                عند اكتمال الهدف ومرور <strong>7 أيام</strong>، ينزل في محفظتك المبلغ بالدولار، ويمكنك التحويل لوكيل الشحن واستلام الأموال في نفس اللحظة.
-            </div>
-            
-            <div class="section-h" style="border-right-color: red; color: red;">هام جداً:</div>
-            <div class="policy-box">
-                تأكد دائماً من التعامل مع الوكلاء المعتمدين الظاهرين في القوائم الرسمية لضمان حقوقك وسرعة استلام مستحقاتك.
-            </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('withdrawView')">📸 حفظ تعليمات السحب كصورة</button>
-        </div>
-
-        <div id="linksView" class="view">
-            <div class="section-h">روابط الوصول والتحميل</div>
-            <a href="https://play.google.com/store/apps/details?id=com.yoso.android" class="btn-main"><span>تحميل البرنامج</span><span class="click-here">اضغط هنا</span></a>
-            <a href="https://t.me/yosoChat" class="btn-main"><span>قناة التليجرام الرسمية</span><span class="click-here">اضغط هنا</span></a>
-            <a href="https://www.tiktok.com/@yoso7728?_r=1&_t=ZS-93Ku3Ah2l0s" class="btn-main"><span>حساب تيك توك</span><span class="click-here">اضغط هنا</span></a>
-            <button class="back-home" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-        </div>
-
-    </div>
-
-    <script>
-        function show(id) {
-            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            window.scrollTo(0,0);
-        }
-        function tab(btn, id, parentId) {
-            const p = document.getElementById(parentId);
-            p.querySelectorAll('.t-content').forEach(c => c.style.display = 'none');
-            p.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById(id).style.display = 'block';
-            btn.classList.add('active');
-        }
-
-        // وظيفة إظهار خيارات الواتساب
-        function toggleWhatsapp() {
-            const box = document.getElementById('whatsappBox');
-            box.classList.toggle('active');
-        }
-
-        function exportView(viewId) {
-            const element = document.getElementById(viewId);
-            const itemsToHide = element.querySelectorAll('.no-export-item');
-            
-            itemsToHide.forEach(item => item.classList.add('no-export'));
-
-            html2canvas(element, {
-                backgroundColor: "#ffffff",
-                scale: 2,
-                logging: false,
-                useCORS: true
-            }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = `YoSo-${viewId}.png`;
-                link.href = canvas.toDataURL("image/png");
-                link.click();
-                
-                itemsToHide.forEach(item => item.classList.remove('no-export'));
-            });
-        }
-    </script>
+    <h1>احا يا علي</h1>
 </body>
 </html>
