@@ -7,7 +7,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
         
-        body { margin: 0; padding: 0; background: #fdfcfb; font-family: 'Cairo', sans-serif; color: #333; overflow-x: hidden; }
+        body { margin: 0; padding: 0; background: #fdfcfb; font-family: 'Cairo', sans-serif; color: #333; }
         
         .container { 
             width: 100%; 
@@ -15,15 +15,17 @@
             margin: auto; 
             background: white; 
             min-height: 100vh; 
-            padding: 12px; 
+            padding: 25px 15px; 
             box-sizing: border-box; 
             border-left: 2px solid #d4af37; 
             border-right: 2px solid #d4af37; 
+            display: flex;
+            flex-direction: column;
         }
         
-        .header { text-align: center; margin-bottom: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
         .big-brand { 
-            font-size: 50px; 
+            font-size: 52px; 
             font-weight: 900; 
             margin: 0; 
             background: linear-gradient(180deg, #d4af37 0%, #8a6d3b 100%); 
@@ -31,14 +33,13 @@
             -webkit-text-fill-color: transparent; 
             line-height: 1.2; 
         }
-        .brand-sub { font-size: 18px; font-weight: 900; color: #333; }
-        .gold-line { color: #b8860b; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
+        .brand-sub { font-size: 18px; font-weight: 700; color: #444; margin-top: 5px; }
 
         .btn-main { 
             display: block; 
             width: 100%; 
-            padding: 15px; 
-            margin-bottom: 10px; 
+            padding: 16px; 
+            margin-bottom: 12px; 
             background: #fff; 
             border: 1.5px solid #eee; 
             border-radius: 12px; 
@@ -47,9 +48,43 @@
             color: #333; 
             font-weight: 900; 
             font-size: 16px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03); 
             box-sizing: border-box; 
-            cursor: pointer; 
-            transition: 0.2s;
+            transition: 0.3s ease;
         }
-        .btn-main:active { background: #d4af
+        
+        .btn-main:active { 
+            background: #fcf9ee; 
+            border-color: #d4af37;
+            transform: scale(0.98);
+        }
+
+        .footer { 
+            margin-top: auto; 
+            text-align: center; 
+            font-size: 13px; 
+            color: #aaa; 
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1 class="big-brand">NiuChat</h1>
+        <p class="brand-sub">المنصة الرسمية المعتمدة</p>
+    </div>
+
+    <a href="#" class="btn-main">🌐 الدخول للموقع المباشر</a>
+    <a href="#" class="btn-main">📥 تحميل التطبيق (Android/iOS)</a>
+    <a href="#" class="btn-main">🛠️ مراكز الصيانة والدعم</a>
+    <a href="#" class="btn-main">📢 قناة التحديثات الرسمية</a>
+
+    <div class="footer">
+        جميع الحقوق محفوظة لـ NiuChat &copy; 2026
+    </div>
+</div>
+
+</body>
+</html>
