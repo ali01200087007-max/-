@@ -16,7 +16,6 @@
         .brand-sub { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 1px; }
         .gold-line { color: #e60000; font-size: 13px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
 
-        /* تأثير الـ 3D والوميض الأحمر */
         .btn-main { 
             display: block; width: 100%; padding: 15px; margin-bottom: 15px; 
             background: #1a1a1a; border: 1px solid #333; border-radius: 12px; 
@@ -40,14 +39,8 @@
         }
 
         @keyframes rotateGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
         .btn-main span, .btn-main div { position: relative; z-index: 1; }
-
-        .btn-main:active { 
-            transform: translateY(3px);
-            box-shadow: 0 1px 0px #000;
-        }
-        
+        .btn-main:active { transform: translateY(3px); box-shadow: 0 1px 0px #000; }
         .click-here { display: block; font-size: 9px; font-weight: 400; opacity: 0.7; margin-top: 2px; color: #ff4d4d; }
 
         .whatsapp-options { display: none; margin-bottom: 15px; gap: 10px; flex-direction: column; }
@@ -113,132 +106,87 @@
             </div>
         </div>
 
-        <div id="policyView" class="view">
-            <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'p2','policyView')">المضيفين</button>
-                <button class="tab-btn" onclick="tab(this,'p1','policyView')">سياسة (BD)</button>
-                <button class="tab-btn" onclick="tab(this,'p3','policyView')">الوكالات</button>
-            </div>
-            
-            <div id="p2" class="t-content">
-                <div class="section-h">سياسة برنامج NIU chat (راتب أسبوعي من خلال وكيل الشحن)</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>المستوى</th><th>التارجيت</th><th>المضيف</th><th>الوكيل</th><th>الإجمالي</th><th>المكافآت</th></tr></thead>
-                        <tbody>
-                            <tr><td>1</td><td>100,000</td><td>6</td><td>2</td><td>8</td><td>-</td></tr>
-                            <tr><td>2</td><td>150,000</td><td>8</td><td>4</td><td>12</td><td>VIP1/7D</td></tr>
-                            <tr><td>3</td><td>250,000</td><td>14</td><td>6</td><td>20</td><td>VIP1/14D</td></tr>
-                            <tr><td>4</td><td>500,000</td><td>28</td><td>12</td><td>40</td><td>VIP1/30D</td></tr>
-                            <tr><td>5</td><td>750,000</td><td>41</td><td>17</td><td>58</td><td>VIP2/7D</td></tr>
-                            <tr><td>6</td><td>1,000,000</td><td>55</td><td>22</td><td>77</td><td>VIP2/14D</td></tr>
-                            <tr><td>7</td><td>1,250,000</td><td>69</td><td>28</td><td>97</td><td>VIP2/30D</td></tr>
-                            <tr><td>8</td><td>1,500,000</td><td>83</td><td>33</td><td>116</td><td>VIP3/7D</td></tr>
-                            <tr><td>9</td><td>1,750,000</td><td>97</td><td>39</td><td>136</td><td>VIP3/14D</td></tr>
-                            <tr><td>10</td><td>2,000,000</td><td>111</td><td>45</td><td>156</td><td>VIP3/30D</td></tr>
-                            <tr><td>11</td><td>2,500,000</td><td>138</td><td>56</td><td>194</td><td>VIP4/7D</td></tr>
-                            <tr><td>12</td><td>3,000,000</td><td>166</td><td>67</td><td>233</td><td>VIP4/14D</td></tr>
-                            <tr><td>13</td><td>5,000,000</td><td>278</td><td>112</td><td>390</td><td>VIP4 3D</td></tr>
-                            <tr><td>14</td><td>7,500,000</td><td>416</td><td>167</td><td>583</td><td>VIP5/7D</td></tr>
-                            <tr><td>15</td><td>10,000,000</td><td>555</td><td>223</td><td>778</td><td>VIP5/14D</td></tr>
-                            <tr><td>16</td><td>12,000,000</td><td>666</td><td>267</td><td>933</td><td>VIP5/30D</td></tr>
-                            <tr><td>17</td><td>15,000,000</td><td>833</td><td>334</td><td>1167</td><td>VIP5/45D</td></tr>
-                            <tr><td>18</td><td>20,000,000</td><td>1100</td><td>450</td><td>1550</td><td>VIP5/60D</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="section-h">القواعد:</div>
-                <div class="policy-box">
-                    • يتم تفعيل الوكالة بعد انضمام 10 مضيفين.<br>
-                    • الهدايا العادية تصل 100%.<br>
-                    • هدايا الحظ 10%، وكأس الروم 5%.<br>
-                    • نسبة مردود الهدايا 10% لا تؤثر على راتب المضيف.
-                </div>
-            </div>
-
-            <div id="p1" class="t-content" style="display:none">
-                <div class="section-h">مستويات الأداء والرواتب الأساسية (BD)</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>Lv</th><th>الأساسي</th><th>الوكالات</th><th>0-6 شهر</th><th>6-12 شهر</th></tr></thead>
-                        <tbody>
-                            <tr><td>Level 1</td><td>$0</td><td>100</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 2</td><td>$30</td><td>500</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 3</td><td>$50</td><td>1000</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 4</td><td>$100</td><td>1500</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 5</td><td>$200</td><td>5000</td><td>3%</td><td>2%</td></tr>
-                            <tr><td>Level 6</td><td>$350</td><td>10000</td><td>3%</td><td>2%</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div id="p3" class="t-content" style="display:none">
-                <div class="section-h">سياسة وكالة الشحن المعتمدة</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead><tr><th>المكافأة</th><th>الكوينزات</th><th>الصرف</th><th>الشحن</th></tr></thead>
-                        <tbody>
-                            <tr><td>-</td><td>2,760,000</td><td>9200</td><td>300$</td></tr>
-                            <tr><td>VIP3*3</td><td>4,625,000</td><td>9250</td><td>500$</td></tr>
-                            <tr><td>VIP3*4</td><td>9,300,000</td><td>9300</td><td>1000$</td></tr>
-                            <tr><td>VIP3,4</td><td>28,500,000</td><td>9500</td><td>3000$</td></tr>
-                            <tr><td>VIP4*4</td><td>48,000,000</td><td>9600</td><td>5000$</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ كافة البيانات كصورة للعميل</button>
-        </div>
-
         <div id="shipView" class="view">
             <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'s1','shipView')">جوجل</button>
-                <button class="tab-btn" onclick="tab(this,'s2','shipView')">مصر (EGP)</button>
-                <button class="tab-btn" onclick="tab(this,'s3','shipView')">دولار (USD)</button>
+                <button class="tab-btn active" onclick="tab(this,'s1','shipView')">شحن جوجل</button>
+                <button class="tab-btn" onclick="tab(this,'s2','shipView')">شحن الوكيل (EGP)</button>
             </div>
             
             <div id="s1" class="t-content">
-                <div class="section-h">شحن جوجل الرسمي</div>
+                <div class="section-h">أسعار شحن جوجل (Coins)</div>
                 <div class="table-wrapper">
                     <table>
-                        <thead><tr><th>الكوينات</th><th>السعر ($)</th></tr></thead>
+                        <thead><tr><th>الكوينات (Coins)</th><th>السعر (USD)</th></tr></thead>
                         <tbody>
-                            <tr><td>8,000</td><td>0.99</td></tr>
-                            <tr><td>40,000</td><td>4.99</td></tr>
-                            <tr><td>80,000</td><td>9.99</td></tr>
-                            <tr><td>240,000</td><td>29.99</td></tr>
-                            <tr><td>400,000</td><td>49.99</td></tr>
-                            <tr><td>800,000</td><td>99.99</td></tr>
+                            <tr><td>100,000</td><td>$0.99</td></tr>
+                            <tr><td>500,000</td><td>$4.99</td></tr>
+                            <tr><td>1,000,000</td><td>$9.99</td></tr>
+                            <tr><td>5,000,000</td><td>$49.99</td></tr>
+                            <tr><td>10,000,000</td><td>$99.99</td></tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <div id="s2" class="t-content" style="display:none">
+                <div class="section-h">أسعار شحن الوكيل (مصر)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>المبلغ (EGP)</th><th>الكوينات (Coins)</th></tr></thead>
+                        <tbody>
+                            <tr><td>50 جنية</td><td>105,000</td></tr>
+                            <tr><td>100 جنية</td><td>215,000</td></tr>
+                            <tr><td>200 جنية</td><td>430,000</td></tr>
+                            <tr><td>400 جنية</td><td>860,000</td></tr>
+                            <tr><td>1,000 جنية</td><td>2,150,000</td></tr>
+                            <tr><td>5,000 جنية</td><td>10,800,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="policy-box" style="text-align: center;">
+                    شحن الوكيل يوفر كميات أكبر بنفس السعر مقارنة بالمتجر
                 </div>
             </div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
             <button class="save-img-btn no-export-item" onclick="exportView('shipView')">📸 حفظ أسعار الشحن كصورة</button>
         </div>
 
+        <div id="policyView" class="view">
+            <div class="tabs no-export-item">
+                <button class="tab-btn active" onclick="tab(this,'p2','policyView')">المضيفين</button>
+                <button class="tab-btn" onclick="tab(this,'p1','policyView')">سياسة (BD)</button>
+            </div>
+            <div id="p2" class="t-content">
+                <div class="section-h">سياسة برنامج NIU chat (راتب أسبوعي)</div>
+                <div class="policy-box">
+                    • يتم تفعيل الوكالة بعد انضمام 10 مضيفين.<br>
+                    • الهدايا العادية تصل 100%.
+                </div>
+            </div>
+            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسة كصورة</button>
+        </div>
+
         <div id="daemView" class="view">
             <div class="section-h">مزايا الداعمين (VIP)</div>
             <div class="table-wrapper">
                 <table>
-                    <thead><tr><th>#</th><th>شحن</th><th>ID</th><th>VIP</th><th>شارة</th><th>دخول</th><th>إطار</th></tr></thead>
+                    <thead><tr><th>#</th><th>شحن</th><th>ID</th><th>VIP</th></tr></thead>
                     <tbody>
-                        <tr><td>1</td><td>250$</td><td>مميز</td><td>V1</td><td>2.5M</td><td>-</td><td>-</td></tr>
-                        <tr><td>8</td><td>10k$</td><td>AAA</td><td>V5</td><td>100M</td><td>✓</td><td>✓</td></tr>
+                        <tr><td>1</td><td>250$</td><td>مميز</td><td>V1</td></tr>
+                        <tr><td>8</td><td>10k$</td><td>AAA</td><td>V5</td></tr>
                     </tbody>
                 </table>
             </div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('daemView')">📸 حفظ مزايا الداعمين كصورة</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('daemView')">📸 حفظ المزايا كصورة</button>
         </div>
 
         <div id="withdrawView" class="view">
             <div class="section-h">نظام سحب الرواتب الرسمي</div>
             <div class="policy-box">
-                • متاح سحب الراتب للمضيف أو الوكيل من خلال <strong>وكيل الشحن</strong>.<br>
-                • طرق الاستلام المتاحة: <strong>فودافون كاش / شام كاش</strong>.
+                • متاح سحب الراتب للمضيف أو الوكيل من خلال وكيل الشحن الرسمي.<br>
+                • طرق الاستلام: فودافون كاش / شام كاش.
             </div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
             <button class="save-img-btn no-export-item" onclick="exportView('withdrawView')">📸 حفظ تعليمات السحب كصورة</button>
@@ -246,8 +194,7 @@
 
         <div id="linksView" class="view">
             <div class="section-h">روابط الوصول والتحميل</div>
-            <a href="https://play.google.com/store/apps/details?id=com.niu.chat" class="btn-main"><span>تحميل البرنامج</span><span class="click-here">اضغط هنا</span></a>
-            <a href="https://t.me/niuchat" class="btn-main"><span>قناة التليجرام الرسمية</span><span class="click-here">اضغط هنا</span></a>
+            <a href="https://play.google.com/store/apps/details?id=com.niu.chat" class="btn-main"><span>تحميل البرنامج</span></a>
             <button class="back-home" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
         </div>
 
@@ -266,12 +213,10 @@
             document.getElementById(id).style.display = 'block';
             btn.classList.add('active');
         }
-
         function toggleWhatsapp() {
             const box = document.getElementById('whatsappBox');
             box.classList.toggle('active');
         }
-
         function exportView(viewId) {
             const element = document.getElementById(viewId);
             const itemsToHide = element.querySelectorAll('.no-export-item');
