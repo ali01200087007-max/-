@@ -39,7 +39,7 @@
         }
 
         @keyframes rotateGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .btn-main span, .btn-main div { position: relative; z-index: 1; }
+        .btn-main span { position: relative; z-index: 1; }
         .btn-main:active { transform: translateY(3px); box-shadow: 0 1px 0px #000; }
         .click-here { display: block; font-size: 9px; font-weight: 400; opacity: 0.7; margin-top: 2px; color: #ff4d4d; }
 
@@ -53,7 +53,6 @@
             display: flex; align-items: center; justify-content: center; gap: 8px;
             box-shadow: 0 4px 0px #800000;
         }
-        .save-img-btn:active { transform: translateY(2px); box-shadow: 0 2px 0px #800000; }
 
         .view { display: none; }
         .view.active { display: block; }
@@ -64,12 +63,12 @@
 
         .table-wrapper { width: 100%; margin: 10px 0; border: 1px solid #333; border-radius: 8px; overflow: hidden; background: #1a1a1a; }
         table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        th { background: #2a0000; color: #ff4d4d; font-size: 8.5px; padding: 6px 1px; border: 1px solid #441111; font-weight: 900; }
-        td { border: 1px solid #222; padding: 6px 1px; text-align: center; font-size: 9px; font-weight: 700; color: #ddd; word-wrap: break-word; }
+        th { background: #2a0000; color: #ff4d4d; font-size: 8px; padding: 6px 1px; border: 1px solid #441111; font-weight: 900; }
+        td { border: 1px solid #222; padding: 6px 1px; text-align: center; font-size: 8.5px; font-weight: 700; color: #ddd; word-wrap: break-word; }
 
-        .policy-box { background: #1a0a0a; border-right: 4px solid #e60000; padding: 12px; margin: 10px 0; font-size: 11.5px; line-height: 1.7; text-align: right; color: #ccc; }
+        .policy-box { background: #1a0a0a; border-right: 4px solid #e60000; padding: 12px; margin: 10px 0; font-size: 11px; line-height: 1.6; text-align: right; color: #ccc; }
         .section-h { color: #ff0000; font-weight: 900; font-size: 15px; margin: 15px 0 8px; border-right: 5px solid #e60000; padding-right: 10px; }
-        .back-home { width: 100%; padding: 15px; background: #fff; color: #000; border: none; border-radius: 12px; font-weight: bold; margin-top: 15px; cursor: pointer; }
+        .back-home { width: 100%; padding: 15px; background: #fff; color: #000; border: none; border-radius: 12px; font-weight: bold; margin-top: 15px; cursor: pointer; display: block; text-align: center; text-decoration: none; }
         
         .no-export { display: none !important; }
     </style>
@@ -84,8 +83,9 @@
                 <div class="gold-line">سحب ذاتي اسبوعي</div>
             </div>
             <div class="menu">
-                <div class="btn-main" onclick="show('policyView')"><span>سياسات NIU chat (مضيفين - BD - شحن)</span><span class="click-here">اضغط هنا</span></div>
+                <div class="btn-main" onclick="show('policyView')"><span>سياسة المضيفين و BD</span><span class="click-here">اضغط هنا</span></div>
                 <div class="btn-main" onclick="show('shipView')"><span>بيان أسعار الشحن المعتمدة</span><span class="click-here">اضغط هنا</span></div>
+                <div class="btn-main" onclick="show('agentView')"><span>سياسة وكالة الشحن</span><span class="click-here">اضغط هنا</span></div>
                 <div class="btn-main" onclick="show('daemView')"><span>مكافآت ومزايا الداعمين</span><span class="click-here">اضغط هنا</span></div>
                 <div class="btn-main" onclick="show('withdrawView')" style="border-color:#e60000; color:#ff4d4d"><span>طرق سحب الراتب</span><span class="click-here">اضغط هنا</span></div>
                 
@@ -94,35 +94,25 @@
                 </div>
                 
                 <div id="whatsappBox" class="whatsapp-options">
-                    <a href="https://wa.me/201558806871" class="btn-main" style="border-color:#25d366; color:#25d366; margin-bottom: 5px;">
-                        <span>مستر آدم (الإدارة)</span>
-                    </a>
+                    <a href="https://wa.me/201558806871" class="btn-main" style="border-color:#25d366; color:#25d366; margin-bottom: 5px;"><span>مستر آدم (الإدارة)</span></a>
                 </div>
 
-                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #e60000; background: #2a0000; color: #fff;"><span>الروابط الرسمية وتحميل التطبيق</span><span class="click-here">اضغط هنا</span></div>
+                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #e60000; background: #2a0000; color: #fff;"><span>الروابط الرسمية</span><span class="click-here">اضغط هنا</span></div>
             </div>
         </div>
 
         <div id="policyView" class="view">
             <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'p2','policyView')">المضيفين</button>
-                <button class="tab-btn" onclick="tab(this,'p1','policyView')">BD</button>
-                <button class="tab-btn" onclick="tab(this,'p3','policyView')">وكالة الشحن</button>
+                <button class="tab-btn active" onclick="tab(this,'p_mod','policyView')">سياسة المضيفين</button>
+                <button class="tab-btn" onclick="tab(this,'p_bd','policyView')">سياسة الـ BD</button>
             </div>
             
-            <div id="p2" class="t-content">
+            <div id="p_mod" class="t-content">
                 <div class="section-h">سياسة وكالة المضيفين NIU chat</div>
                 <div class="table-wrapper">
                     <table>
                         <thead>
-                            <tr>
-                                <th>المستوى</th>
-                                <th>التارجت كوينز</th>
-                                <th>راتب المضيف$</th>
-                                <th>راتب الوكيل$</th>
-                                <th>مجموع الراتب$</th>
-                                <th>المكافأة</th>
-                            </tr>
+                            <tr><th>المستوى</th><th>التارجت كوينز</th><th>راتب المضيف$</th><th>راتب الوكيل$</th><th>مجموع الراتب$</th><th>المكافأة</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>1</td><td>850000</td><td>4</td><td>1</td><td>5</td><td>-</td></tr>
@@ -142,8 +132,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="section-h">ملاحظات المضيفين:</div>
                 <div class="policy-box">
+                    ملاحظات المضيفين:<br>
                     - (سعر الكوينات) $1 = 100000 كوينز.<br>
                     - كأس الروم يومي 5%.<br>
                     - ينزل للمضيف بالتارجت 100% من قيمة الهدايا و مردود للمحفظة 15% كعملات ذهبية.<br>
@@ -153,18 +143,11 @@
                 </div>
             </div>
 
-            <div id="p1" class="t-content" style="display:none">
-                <div class="section-h">سياسة NIU chat BD</div>
+            <div id="p_bd" class="t-content" style="display:none">
+                <div class="section-h">سياسة الـ NIU chat BD</div>
                 <div class="table-wrapper">
                     <table>
-                        <thead>
-                            <tr>
-                                <th>المستوى</th>
-                                <th>عمولة</th>
-                                <th>$ راتب ثابت</th>
-                                <th>$ راتب فريق الوكالة</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>المستوى</th><th>عمولة</th><th>$ راتب ثابت</th><th>$ راتب فريق الوكالة</th></tr></thead>
                         <tbody>
                             <tr><td>1</td><td>2%</td><td>10</td><td>500</td></tr>
                             <tr><td>2</td><td>2%</td><td>50</td><td>1000</td></tr>
@@ -175,116 +158,101 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="section-h">ملاحظات BD:</div>
                 <div class="policy-box">
+                    ملاحظات BD:<br>
                     1 - يمكن استلام الراتب الثابت في حالة جلبت وكالتين بنفس الشهر وكل وكالة فيها خمسة مضيفين محققين تارجت ثالث.<br>
                     2 - جلب الوكالات يكون من خارج التطبيق.<br>
                     3 - يمكن الحصول ع ايدي مميز عند الوصول للمستوى الثالث.
                 </div>
             </div>
-
-            <div id="p3" class="t-content" style="display:none">
-                <div class="section-h">سياسة وكالة الشحن NIU chat</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>المستوى</th>
-                                <th>مبلغ الشحن$</th>
-                                <th>لكل $1</th>
-                                <th>إجمالي عدد الكوينزات</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td>500</td><td>113000</td><td>56500000</td></tr>
-                            <tr><td>2</td><td>1000</td><td>115000</td><td>115000000</td></tr>
-                            <tr><td>3</td><td>2000</td><td>116000</td><td>232000000</td></tr>
-                            <tr><td>4</td><td>5000</td><td>118000</td><td>590000000</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="section-h">ملاحظات وكالة الشحن:</div>
-                <div class="policy-box">
-                    1- أول شحنة لاتقل عن $500.<br>
-                    2- طرق الدفع يو اس تي دي , بايونير .<br>
-                    3- يمنع البيع بأقل من سعر المنصة.
-                </div>
-
-                <div class="section-h">مكافأة وكيل الشحن:</div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>المستوى</th>
-                                <th>مبلغ الشحن$</th>
-                                <th>المكافأة</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td>500</td><td>VIP4</td></tr>
-                            <tr><td>2</td><td>1000</td><td>VIP5</td></tr>
-                            <tr><td>3</td><td>2000</td><td>ABCDABC</td></tr>
-                            <tr><td>4</td><td>5000</td><td>ABCABC</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسات كصورة</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسة كصورة</button>
         </div>
 
         <div id="shipView" class="view">
             <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'s1','shipView')">شحن جوجل</button>
-                <button class="tab-btn" onclick="tab(this,'s2','shipView')">شحن الوكيل (EGP)</button>
+                <button class="tab-btn active" onclick="tab(this,'s_google','shipView')">شحن جوجل</button>
+                <button class="tab-btn" onclick="tab(this,'s_egypt','shipView')">شحن الوكيل (مصر)</button>
             </div>
             
-            <div id="s1" class="t-content">
-                <div class="section-h">أسعار شحن جوجل الرسمي</div>
+            <div id="s_google" class="t-content">
+                <div class="section-h">إعادة شحن (جوجل)</div>
                 <div class="table-wrapper">
                     <table>
                         <thead><tr><th>الكوينات</th><th>السعر (USD)</th></tr></thead>
                         <tbody>
-                            <tr><td>100,000</td><td>$0.99</td></tr>
-                            <tr><td>500,000</td><td>$4.99</td></tr>
-                            <tr><td>1,000,000</td><td>$9.99</td></tr>
-                            <tr><td>5,000,000</td><td>$49.99</td></tr>
-                            <tr><td>10,000,000</td><td>$99.99</td></tr>
+                            <tr><td>100000</td><td>0.99</td></tr>
+                            <tr><td>500000</td><td>4.99</td></tr>
+                            <tr><td>1000000</td><td>9.99</td></tr>
+                            <tr><td>5000000</td><td>49.99</td></tr>
+                            <tr><td>10000000</td><td>99.99</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <div id="s2" class="t-content" style="display:none">
-                <div class="section-h">أسعار شحن الوكيل (مصر)</div>
+            <div id="s_egypt" class="t-content" style="display:none">
+                <div class="section-h">شحن الوكيل (EGP)</div>
                 <div class="table-wrapper">
                     <table>
                         <thead><tr><th>المبلغ (EGP)</th><th>الكوينات</th></tr></thead>
                         <tbody>
-                            <tr><td>50 EGP</td><td>105,000 كوينز</td></tr>
-                            <tr><td>100 EGP</td><td>215,000 كوينز</td></tr>
-                            <tr><td>200 EGP</td><td>430,000 كوينز</td></tr>
-                            <tr><td>400 EGP</td><td>860,000 كوينز</td></tr>
-                            <tr><td>1,000 EGP</td><td>2,150,000 كوينز</td></tr>
-                            <tr><td>5,000 EGP</td><td>10,800,000 كوينز</td></tr>
+                            <tr><td>EGP 50</td><td>105,000 كوينز</td></tr>
+                            <tr><td>EGP 100</td><td>215,000 كوينز</td></tr>
+                            <tr><td>EGP 200</td><td>430,000 كوينز</td></tr>
+                            <tr><td>EGP 400</td><td>860,000 كوينز</td></tr>
+                            <tr><td>EGP 1,000</td><td>2,150,000 كوينز</td></tr>
+                            <tr><td>EGP 5,000</td><td>10,800,000 كوينز</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('shipView')">📸 حفظ الأسعار كصورة</button>
+        </div>
+
+        <div id="agentView" class="view">
+            <div class="section-h">سياسة وكالة الشحن NIU chat</div>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>المستوى</th><th>مبلغ الشحن$</th><th>لكل $1</th><th>إجمالي عدد الكوينزات</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>500</td><td>113000</td><td>56500000</td></tr>
+                        <tr><td>2</td><td>1000</td><td>115000</td><td>115000000</td></tr>
+                        <tr><td>3</td><td>2000</td><td>116000</td><td>232000000</td></tr>
+                        <tr><td>4</td><td>5000</td><td>118000</td><td>590000000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="policy-box">
+                ملاحظات وكالة الشحن:<br>
+                1- أول شحنة لاتقل عن $500.<br>
+                2- طرق الدفع يو اس تي دي , بايونير .<br>
+                3- يمنع البيع بأقل من سعر المنصة.
+            </div>
+            <div class="section-h">مكافأة وكيل الشحن</div>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>المستوى</th><th>مبلغ الشحن$</th><th>المكافأة</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>500</td><td>VIP4</td></tr>
+                        <tr><td>2</td><td>1000</td><td>VIP5</td></tr>
+                        <tr><td>3</td><td>2000</td><td>ABCDABC</td></tr>
+                        <tr><td>4</td><td>5000</td><td>ABCABC</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('agentView')">📸 حفظ السياسة كصورة</button>
         </div>
 
         <div id="daemView" class="view">
-            <div class="section-h">مزايا الداعمين</div>
-            <div class="policy-box">يتم توزيع هدايا VIP4 مجانية لجميع الداعمين الجدد عند التحميل والتواصل مع الإدارة.</div>
+            <div class="section-h">مكافآت الداعمين</div>
+            <div class="policy-box">يتم منح VIP4 مجانًا فور التحميل لجميع الداعمين الجدد بعد التواصل مع الإدارة.</div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
 
         <div id="withdrawView" class="view">
-            <div class="section-h">طرق سحب الراتب</div>
+            <div class="section-h">نظام سحب الرواتب</div>
             <div class="policy-box">
                 - يتم استلام الراتب للمحفظة مباشرة.<br>
                 - السحب متاح عبر (فودافون كاش - شام كاش) من خلال وكلاء الشحن المعتمدين.
@@ -297,7 +265,6 @@
             <a href="https://play.google.com/store/apps/details?id=com.niu.chat" class="btn-main"><span>تحميل NIU chat من Google Play</span></a>
             <button class="back-home" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
-
     </div>
 
     <script>
@@ -314,20 +281,14 @@
             btn.classList.add('active');
         }
         function toggleWhatsapp() {
-            const box = document.getElementById('whatsappBox');
-            box.classList.toggle('active');
+            document.getElementById('whatsappBox').classList.toggle('active');
         }
         function exportView(viewId) {
             const element = document.getElementById(viewId);
             const itemsToHide = element.querySelectorAll('.no-export-item');
             itemsToHide.forEach(item => item.classList.add('no-export'));
 
-            html2canvas(element, {
-                backgroundColor: "#111111",
-                scale: 2,
-                logging: false,
-                useCORS: true
-            }).then(canvas => {
+            html2canvas(element, { backgroundColor: "#111111", scale: 2 }).then(canvas => {
                 const link = document.createElement('a');
                 link.download = `NIUchat-${viewId}.png`;
                 link.href = canvas.toDataURL("image/png");
