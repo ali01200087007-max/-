@@ -84,7 +84,7 @@
                 <div class="gold-line">سحب ذاتي اسبوعي</div>
             </div>
             <div class="menu">
-                <div class="btn-main" onclick="show('policyView')"><span>وثيقة سياسة التطبيق الرسمية</span><span class="click-here">اضغط هنا</span></div>
+                <div class="btn-main" onclick="show('policyView')"><span>سياسات NIU chat (مضيفين - BD - شحن)</span><span class="click-here">اضغط هنا</span></div>
                 <div class="btn-main" onclick="show('shipView')"><span>بيان أسعار الشحن المعتمدة</span><span class="click-here">اضغط هنا</span></div>
                 <div class="btn-main" onclick="show('daemView')"><span>مكافآت ومزايا الداعمين</span><span class="click-here">اضغط هنا</span></div>
                 <div class="btn-main" onclick="show('withdrawView')" style="border-color:#e60000; color:#ff4d4d"><span>طرق سحب الراتب</span><span class="click-here">اضغط هنا</span></div>
@@ -97,13 +97,142 @@
                     <a href="https://wa.me/201558806871" class="btn-main" style="border-color:#25d366; color:#25d366; margin-bottom: 5px;">
                         <span>مستر آدم (الإدارة)</span>
                     </a>
-                    <a href="https://wa.me/966558600585" class="btn-main" style="border-color:#25d366; color:#25d366; margin-bottom: 5px;">
-                        <span>مستر محارب (الإدارة)</span>
-                    </a>
                 </div>
 
-                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #e60000; background: #2a0000; color: #fff;"><span>الروابط الرسمية (تحميل - تليجرام - تيك توك)</span><span class="click-here">اضغط هنا</span></div>
+                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #e60000; background: #2a0000; color: #fff;"><span>الروابط الرسمية وتحميل التطبيق</span><span class="click-here">اضغط هنا</span></div>
             </div>
+        </div>
+
+        <div id="policyView" class="view">
+            <div class="tabs no-export-item">
+                <button class="tab-btn active" onclick="tab(this,'p2','policyView')">المضيفين</button>
+                <button class="tab-btn" onclick="tab(this,'p1','policyView')">BD</button>
+                <button class="tab-btn" onclick="tab(this,'p3','policyView')">وكالة الشحن</button>
+            </div>
+            
+            <div id="p2" class="t-content">
+                <div class="section-h">سياسة وكالة المضيفين NIU chat</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المستوى</th>
+                                <th>التارجت كوينز</th>
+                                <th>راتب المضيف$</th>
+                                <th>راتب الوكيل$</th>
+                                <th>مجموع الراتب$</th>
+                                <th>المكافأة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>850000</td><td>4</td><td>1</td><td>5</td><td>-</td></tr>
+                            <tr><td>-</td><td>1700000</td><td>8</td><td>2</td><td>10</td><td>-</td></tr>
+                            <tr><td>2</td><td>2600000</td><td>12</td><td>3</td><td>15</td><td>-</td></tr>
+                            <tr><td>3</td><td>4400000</td><td>20</td><td>5</td><td>25</td><td>-</td></tr>
+                            <tr><td>4</td><td>7000000</td><td>32</td><td>8</td><td>40</td><td>-</td></tr>
+                            <tr><td>5</td><td>11500000</td><td>52</td><td>13</td><td>65</td><td>-</td></tr>
+                            <tr><td>6</td><td>15500000</td><td>68</td><td>17</td><td>85</td><td>-</td></tr>
+                            <tr><td>7</td><td>19500000</td><td>88</td><td>22</td><td>110</td><td>-</td></tr>
+                            <tr><td>8</td><td>25000000</td><td>112</td><td>28</td><td>140</td><td>-</td></tr>
+                            <tr><td>9</td><td>32500000</td><td>144</td><td>36</td><td>180</td><td>VIP3</td></tr>
+                            <tr><td>10</td><td>41500000</td><td>184</td><td>46</td><td>230</td><td>VIP4</td></tr>
+                            <tr><td>11</td><td>55000000</td><td>240</td><td>60</td><td>300</td><td>VIP5</td></tr>
+                            <tr><td>12</td><td>73500000</td><td>320</td><td>80</td><td>400</td><td>ABCDABCD</td></tr>
+                            <tr><td>13</td><td>85500000</td><td>376</td><td>94</td><td>470</td><td>ABCABCD</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="section-h">ملاحظات المضيفين:</div>
+                <div class="policy-box">
+                    - (سعر الكوينات) $1 = 100000 كوينز.<br>
+                    - كأس الروم يومي 5%.<br>
+                    - ينزل للمضيف بالتارجت 100% من قيمة الهدايا و مردود للمحفظة 15% كعملات ذهبية.<br>
+                    - تسليم الراتب بعد اليوم 10 من الشهر التالي.<br>
+                    - يستلم المضيف راتبة للمحفظة مباشرة.<br>
+                    - الزيادة فوق التارجت لكل زيادة فوق التارجت بعد تحقيق التارجت 50% ينزل للمحفظة مباشرة بداية الشهر التالي.
+                </div>
+            </div>
+
+            <div id="p1" class="t-content" style="display:none">
+                <div class="section-h">سياسة NIU chat BD</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المستوى</th>
+                                <th>عمولة</th>
+                                <th>$ راتب ثابت</th>
+                                <th>$ راتب فريق الوكالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>2%</td><td>10</td><td>500</td></tr>
+                            <tr><td>2</td><td>2%</td><td>50</td><td>1000</td></tr>
+                            <tr><td>3</td><td>2%</td><td>100</td><td>3000</td></tr>
+                            <tr><td>4</td><td>2%</td><td>150</td><td>5000</td></tr>
+                            <tr><td>5</td><td>2%</td><td>300</td><td>10000</td></tr>
+                            <tr><td>6</td><td>2%</td><td>500</td><td>20000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="section-h">ملاحظات BD:</div>
+                <div class="policy-box">
+                    1 - يمكن استلام الراتب الثابت في حالة جلبت وكالتين بنفس الشهر وكل وكالة فيها خمسة مضيفين محققين تارجت ثالث.<br>
+                    2 - جلب الوكالات يكون من خارج التطبيق.<br>
+                    3 - يمكن الحصول ع ايدي مميز عند الوصول للمستوى الثالث.
+                </div>
+            </div>
+
+            <div id="p3" class="t-content" style="display:none">
+                <div class="section-h">سياسة وكالة الشحن NIU chat</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المستوى</th>
+                                <th>مبلغ الشحن$</th>
+                                <th>لكل $1</th>
+                                <th>إجمالي عدد الكوينزات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>500</td><td>113000</td><td>56500000</td></tr>
+                            <tr><td>2</td><td>1000</td><td>115000</td><td>115000000</td></tr>
+                            <tr><td>3</td><td>2000</td><td>116000</td><td>232000000</td></tr>
+                            <tr><td>4</td><td>5000</td><td>118000</td><td>590000000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-h">ملاحظات وكالة الشحن:</div>
+                <div class="policy-box">
+                    1- أول شحنة لاتقل عن $500.<br>
+                    2- طرق الدفع يو اس تي دي , بايونير .<br>
+                    3- يمنع البيع بأقل من سعر المنصة.
+                </div>
+
+                <div class="section-h">مكافأة وكيل الشحن:</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المستوى</th>
+                                <th>مبلغ الشحن$</th>
+                                <th>المكافأة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>500</td><td>VIP4</td></tr>
+                            <tr><td>2</td><td>1000</td><td>VIP5</td></tr>
+                            <tr><td>3</td><td>2000</td><td>ABCDABC</td></tr>
+                            <tr><td>4</td><td>5000</td><td>ABCABC</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسات كصورة</button>
         </div>
 
         <div id="shipView" class="view">
@@ -113,10 +242,10 @@
             </div>
             
             <div id="s1" class="t-content">
-                <div class="section-h">أسعار شحن جوجل (Coins)</div>
+                <div class="section-h">أسعار شحن جوجل الرسمي</div>
                 <div class="table-wrapper">
                     <table>
-                        <thead><tr><th>الكوينات (Coins)</th><th>السعر (USD)</th></tr></thead>
+                        <thead><tr><th>الكوينات</th><th>السعر (USD)</th></tr></thead>
                         <tbody>
                             <tr><td>100,000</td><td>$0.99</td></tr>
                             <tr><td>500,000</td><td>$4.99</td></tr>
@@ -132,70 +261,41 @@
                 <div class="section-h">أسعار شحن الوكيل (مصر)</div>
                 <div class="table-wrapper">
                     <table>
-                        <thead><tr><th>المبلغ (EGP)</th><th>الكوينات (Coins)</th></tr></thead>
+                        <thead><tr><th>المبلغ (EGP)</th><th>الكوينات</th></tr></thead>
                         <tbody>
-                            <tr><td>50 جنية</td><td>105,000</td></tr>
-                            <tr><td>100 جنية</td><td>215,000</td></tr>
-                            <tr><td>200 جنية</td><td>430,000</td></tr>
-                            <tr><td>400 جنية</td><td>860,000</td></tr>
-                            <tr><td>1,000 جنية</td><td>2,150,000</td></tr>
-                            <tr><td>5,000 جنية</td><td>10,800,000</td></tr>
+                            <tr><td>50 EGP</td><td>105,000 كوينز</td></tr>
+                            <tr><td>100 EGP</td><td>215,000 كوينز</td></tr>
+                            <tr><td>200 EGP</td><td>430,000 كوينز</td></tr>
+                            <tr><td>400 EGP</td><td>860,000 كوينز</td></tr>
+                            <tr><td>1,000 EGP</td><td>2,150,000 كوينز</td></tr>
+                            <tr><td>5,000 EGP</td><td>10,800,000 كوينز</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="policy-box" style="text-align: center;">
-                    شحن الوكيل يوفر كميات أكبر بنفس السعر مقارنة بالمتجر
-                </div>
             </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('shipView')">📸 حفظ أسعار الشحن كصورة</button>
-        </div>
-
-        <div id="policyView" class="view">
-            <div class="tabs no-export-item">
-                <button class="tab-btn active" onclick="tab(this,'p2','policyView')">المضيفين</button>
-                <button class="tab-btn" onclick="tab(this,'p1','policyView')">سياسة (BD)</button>
-            </div>
-            <div id="p2" class="t-content">
-                <div class="section-h">سياسة برنامج NIU chat (راتب أسبوعي)</div>
-                <div class="policy-box">
-                    • يتم تفعيل الوكالة بعد انضمام 10 مضيفين.<br>
-                    • الهدايا العادية تصل 100%.
-                </div>
-            </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسة كصورة</button>
+            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('shipView')">📸 حفظ الأسعار كصورة</button>
         </div>
 
         <div id="daemView" class="view">
-            <div class="section-h">مزايا الداعمين (VIP)</div>
-            <div class="table-wrapper">
-                <table>
-                    <thead><tr><th>#</th><th>شحن</th><th>ID</th><th>VIP</th></tr></thead>
-                    <tbody>
-                        <tr><td>1</td><td>250$</td><td>مميز</td><td>V1</td></tr>
-                        <tr><td>8</td><td>10k$</td><td>AAA</td><td>V5</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('daemView')">📸 حفظ المزايا كصورة</button>
+            <div class="section-h">مزايا الداعمين</div>
+            <div class="policy-box">يتم توزيع هدايا VIP4 مجانية لجميع الداعمين الجدد عند التحميل والتواصل مع الإدارة.</div>
+            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
 
         <div id="withdrawView" class="view">
-            <div class="section-h">نظام سحب الرواتب الرسمي</div>
+            <div class="section-h">طرق سحب الراتب</div>
             <div class="policy-box">
-                • متاح سحب الراتب للمضيف أو الوكيل من خلال وكيل الشحن الرسمي.<br>
-                • طرق الاستلام: فودافون كاش / شام كاش.
+                - يتم استلام الراتب للمحفظة مباشرة.<br>
+                - السحب متاح عبر (فودافون كاش - شام كاش) من خلال وكلاء الشحن المعتمدين.
             </div>
-            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('withdrawView')">📸 حفظ تعليمات السحب كصورة</button>
+            <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
 
         <div id="linksView" class="view">
-            <div class="section-h">روابط الوصول والتحميل</div>
-            <a href="https://play.google.com/store/apps/details?id=com.niu.chat" class="btn-main"><span>تحميل البرنامج</span></a>
-            <button class="back-home" onclick="show('homeView')">العودة للرئيسية (اضغط هنا)</button>
+            <div class="section-h">الروابط الرسمية</div>
+            <a href="https://play.google.com/store/apps/details?id=com.niu.chat" class="btn-main"><span>تحميل NIU chat من Google Play</span></a>
+            <button class="back-home" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
 
     </div>
