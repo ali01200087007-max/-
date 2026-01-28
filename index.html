@@ -11,10 +11,9 @@
         body { margin: 0; padding: 0; background: #0a0a0a; font-family: 'Cairo', sans-serif; color: #eee; overflow-x: hidden; }
         .container { width: 100%; max-width: 500px; margin: auto; background: #111; min-height: 100vh; padding: 12px; box-sizing: border-box; border-left: 2px solid #e60000; border-right: 2px solid #e60000; box-shadow: 0 0 30px rgba(230, 0, 0, 0.2); }
         
-        .header { text-align: center; margin-bottom: 20px; padding-top: 10px; }
+        .header { text-align: center; margin-bottom: 25px; padding-top: 15px; }
         .big-yoso { font-size: 55px; font-weight: 900; margin: 0; background: linear-gradient(180deg, #ff0000 0%, #800000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; filter: drop-shadow(0 0 5px rgba(255,0,0,0.3)); }
-        .brand-sub { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 1px; }
-        .gold-line { color: #e60000; font-size: 13px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
+        .brand-sub { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 1px; margin-top: 5px; }
 
         .btn-main { 
             display: block; width: 100%; padding: 15px; margin-bottom: 15px; 
@@ -43,7 +42,7 @@
         .view.active { display: block; }
 
         .tabs { display: flex; gap: 4px; margin-bottom: 15px; }
-        .tab-btn { flex: 1; padding: 10px 5px; font-size: 9px; font-weight: bold; border: 1.5px solid #e60000; background: #111; color: #e60000; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+        .tab-btn { flex: 1; padding: 10px 5px; font-size: 9.5px; font-weight: bold; border: 1.5px solid #e60000; background: #111; color: #e60000; border-radius: 8px; cursor: pointer; white-space: nowrap; }
         .tab-btn.active { background: #e60000; color: white; }
 
         .table-wrapper { width: 100%; margin: 10px 0; border: 1px solid #333; border-radius: 8px; overflow: hidden; background: #1a1a1a; }
@@ -66,7 +65,6 @@
             <div class="header">
                 <h1 class="big-yoso">NIU chat</h1>
                 <div class="brand-sub">NIU chat-Group Voice Chat</div>
-                <div class="gold-line">سحب ذاتي اسبوعي</div>
             </div>
             <div class="menu">
                 <div class="btn-main" onclick="show('policyView')"><span>سياسات الوكالات (مضيفين - BD - شحن)</span><span class="click-here">اضغط هنا</span></div>
@@ -75,14 +73,14 @@
                 <div class="btn-main" onclick="show('withdrawView')" style="border-color:#e60000; color:#ff4d4d"><span>طرق سحب الراتب</span><span class="click-here">اضغط هنا</span></div>
                 
                 <div class="btn-main" style="border-color:#25d366; color:#25d366" onclick="toggleWhatsapp()">
-                    <span>تواصل واتساب مع الإدارة</span><span class="click-here">اضغط هنا للإختيار</span>
+                    <span>تواصل واتساب مع الإدارة</span><span class="click-here">اضغط هنا للاختيار</span>
                 </div>
                 
                 <div id="whatsappBox" class="whatsapp-options">
                     <a href="https://wa.me/201558806871" class="btn-main" style="border-color:#25d366; color:#25d366; margin-bottom: 5px;"><span>مستر آدم (الإدارة)</span></a>
                 </div>
 
-                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #e60000; background: #2a0000; color: #fff;"><span>تحميل التطبيق والروابط</span><span class="click-here">اضغط هنا</span></div>
+                <div class="btn-main" onclick="show('linksView')" style="border: 2px solid #e60000; background: #2a0000; color: #fff;"><span>تحميل التطبيق والروابط الرسمية</span><span class="click-here">اضغط هنا</span></div>
             </div>
         </div>
 
@@ -119,6 +117,7 @@
                     </table>
                 </div>
                 <div class="policy-box">
+                    <strong>ملاحظات المضيفين:</strong><br>
                     - (سعر الكوينات) $1 = 100000 كوينز.<br>
                     - كأس الروم يومي 5%.<br>
                     - ينزل للمضيف بالتارجت 100% من قيمة الهدايا و مردود للمحفظة 15% كعملات ذهبية.<br>
@@ -144,6 +143,7 @@
                     </table>
                 </div>
                 <div class="policy-box">
+                    <strong>ملاحظات BD:</strong><br>
                     1 - يمكن استلام الراتب الثابت في حالة جلبت وكالتين بنفس الشهر وكل وكالة فيها خمسة مضيفين محققين تارجت ثالث.<br>
                     2 - جلب الوكالات يكون من خارج التطبيق.<br>
                     3 - يمكن الحصول ع ايدي مميز عند الوصول للمستوى الثالث.
@@ -176,6 +176,7 @@
                     </table>
                 </div>
                 <div class="policy-box">
+                    <strong>ملاحظات وكالة الشحن:</strong><br>
                     1- أول شحنة لاتقل عن $500.<br>
                     2- طرق الدفع يو اس تي دي , بايونير .<br>
                     3- يمنع البيع بأقل من سعر المنصة.
@@ -183,7 +184,7 @@
             </div>
             
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
-            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسة كصورة</button>
+            <button class="save-img-btn no-export-item" onclick="exportView('policyView')">📸 حفظ السياسات كصورة</button>
         </div>
 
         <div id="shipView" class="view">
@@ -193,7 +194,7 @@
             </div>
             
             <div id="s_google" class="t-content">
-                <div class="section-h">أسعار شحن جوجل</div>
+                <div class="section-h">إعادة شحن (جوجل الرسمي)</div>
                 <div class="table-wrapper">
                     <table>
                         <thead><tr><th>الكوينات</th><th>السعر (USD)</th></tr></thead>
@@ -209,7 +210,7 @@
             </div>
 
             <div id="s_egypt" class="t-content" style="display:none">
-                <div class="section-h">شحن الوكيل (EGP)</div>
+                <div class="section-h">شحن الوكيل المعتمد (EGP)</div>
                 <div class="table-wrapper">
                     <table>
                         <thead><tr><th>المبلغ (EGP)</th><th>الكوينات</th></tr></thead>
@@ -228,14 +229,20 @@
         </div>
 
         <div id="daemView" class="view">
-            <div class="section-h">مزايا الداعمين</div>
-            <div class="policy-box">يتم منح VIP4 مجانًا فور التحميل لجميع الداعمين الجدد بعد التواصل مع الإدارة.</div>
+            <div class="section-h">مكافآت ومزايا الداعمين</div>
+            <div class="policy-box">
+                يتم منح VIP4 مجانًا فور التحميل لجميع الداعمين الجدد بعد التواصل مع الإدارة وتأكيد الشحن الأول.<br>
+                هناك مزايا إضافية للداعمين الذين يتخطون مستويات شحن معينة.
+            </div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
 
         <div id="withdrawView" class="view">
             <div class="section-h">طرق سحب الراتب</div>
-            <div class="policy-box">الاستلام للمحفظة مباشرة والسحب عبر فودافون كاش أو شام كاش من خلال الوكيل المعتمد.</div>
+            <div class="policy-box">
+                - يتم استلام الراتب للمحفظة مباشرة.<br>
+                - السحب متاح عبر (فودافون كاش - شام كاش) من خلال وكيل الشحن المعتمد فقط.
+            </div>
             <button class="back-home no-export-item" onclick="show('homeView')">العودة للرئيسية</button>
         </div>
 
